@@ -17,23 +17,12 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section with Video Background */}
       <section className="relative container mx-auto px-6 py-32 text-center min-h-screen flex items-center justify-center">
-        {/* Видео или GIF фон - раскомментируйте и укажите путь к вашему файлу */}
-        {/* 
         <VideoBackground 
-          src="/videos/background.mp4" 
+          src="/videos/101499-video-720.mp4" 
           type="video"
           overlay={true}
           overlayOpacity={0.6}
         />
-        */}
-        {/* Или для GIF:
-        <VideoBackground 
-          src="/images/background.gif" 
-          type="gif"
-          overlay={true}
-          overlayOpacity={0.5}
-        />
-        */}
         
         <div className="relative z-10 w-full">
         <AnimatedSection>
