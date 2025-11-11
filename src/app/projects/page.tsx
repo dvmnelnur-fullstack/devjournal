@@ -63,7 +63,7 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition"
+              className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
             >
               <div className="flex items-start justify-between mb-4">
                 <h2 className="text-2xl font-bold">{project.title}</h2>
@@ -84,15 +84,16 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 mt-4">
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/80 hover:text-white transition"
+                    className="px-4 py-2 bg-white/10 rounded-lg text-white/80 hover:text-white hover:bg-white/20 transition flex items-center gap-2 group/link"
                   >
-                    GitHub →
+                    GitHub
+                    <span className="group-hover/link:translate-x-1 transition-transform">→</span>
                   </a>
                 )}
                 {project.liveUrl && (
@@ -100,9 +101,10 @@ export default function ProjectsPage() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/80 hover:text-white transition"
+                    className="px-4 py-2 bg-white text-black rounded-lg font-semibold hover:bg-gray-300 transition flex items-center gap-2 group/link"
                   >
-                    Демо →
+                    Демо
+                    <span className="group-hover/link:translate-x-1 transition-transform">→</span>
                   </a>
                 )}
               </div>
