@@ -51,10 +51,10 @@ const statusLabels = {
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen py-20">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-20 pt-12">
-          <h1 className="text-5xl md:text-7xl font-semibold mb-6 text-gray-900 tracking-tight">Мои проекты</h1>
-          <p className="text-2xl text-gray-600 max-w-2xl mx-auto font-light">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Мои проекты</h1>
+          <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Коллекция моих работ — от веб-приложений до экспериментов с новыми технологиями
           </p>
         </div>
@@ -63,40 +63,34 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
             >
-              <div className="flex items-start justify-between mb-6">
-                <h2 className="text-3xl font-semibold text-gray-900">{project.title}</h2>
+              <div className="flex items-start justify-between mb-4">
+                <h2 className="text-2xl font-bold">{project.title}</h2>
                 <span
-                  className={`px-3 py-1 rounded-full text-xs font-medium border ${
-                    project.status === "completed"
-                      ? "bg-green-50 text-green-700 border-green-200"
-                      : project.status === "in-progress"
-                      ? "bg-yellow-50 text-yellow-700 border-yellow-200"
-                      : "bg-blue-50 text-blue-700 border-blue-200"
-                  }`}
+                  className={`px-3 py-1 rounded-full text-xs border ${statusColors[project.status]}`}
                 >
                   {statusLabels[project.status]}
                 </span>
               </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
+              <p className="text-white/70 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700 font-medium"
+                    className="px-3 py-1 bg-white/10 rounded text-sm"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex gap-3 mt-6">
+              <div className="flex gap-4 mt-4">
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2 bg-gray-100 rounded-full text-gray-700 hover:bg-gray-200 transition flex items-center gap-2 group/link text-sm font-medium"
+                    className="px-4 py-2 bg-white/10 rounded-lg text-white/80 hover:text-white hover:bg-white/20 transition flex items-center gap-2 group/link"
                   >
                     GitHub
                     <span className="group-hover/link:translate-x-1 transition-transform">→</span>
@@ -107,7 +101,7 @@ export default function ProjectsPage() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition flex items-center gap-2 group/link text-sm"
+                    className="px-4 py-2 bg-white text-black rounded-lg font-semibold hover:bg-gray-300 transition flex items-center gap-2 group/link"
                   >
                     Демо
                     <span className="group-hover/link:translate-x-1 transition-transform">→</span>
@@ -118,12 +112,12 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        <div className="text-center mt-20">
-          <p className="text-gray-600 mb-6 text-lg">Хотите увидеть больше?</p>
+        <div className="text-center mt-16">
+          <p className="text-white/60 mb-6">Хотите увидеть больше?</p>
           <Link
             href="https://github.com/dvmnelnur-fullstack"
             target="_blank"
-            className="px-8 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition inline-block text-sm"
+            className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-300 transition inline-block"
           >
             Посмотреть на GitHub
           </Link>

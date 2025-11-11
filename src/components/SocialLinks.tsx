@@ -33,7 +33,7 @@ export default function SocialLinks() {
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 flex items-center justify-center bg-gray-100 rounded-full hover:bg-gray-200 transition hover:scale-110"
+          className="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition hover:scale-110"
           aria-label={link.name}
         >
           <span className="text-xl">{link.icon}</span>

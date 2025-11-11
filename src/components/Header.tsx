@@ -14,33 +14,33 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full bg-white/80 backdrop-blur-xl border-b border-gray-200 z-50">
+    <header className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-sm border-b border-white/10 z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-semibold text-gray-900 hover:text-gray-600 transition"
+            className="text-2xl font-bold text-white hover:text-gray-300 transition"
           >
             DevJournal
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-gray-900 transition relative group text-sm font-medium"
+                className="text-white/80 hover:text-white transition relative group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-900"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -64,12 +64,12 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3 animate-fadeIn bg-white rounded-lg shadow-lg p-4">
+          <div className="md:hidden mt-4 pb-4 space-y-3 animate-fadeIn">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-gray-700 hover:text-gray-900 transition py-2 font-medium"
+                className="block text-white/80 hover:text-white transition py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
