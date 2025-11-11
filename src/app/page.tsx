@@ -1,17 +1,90 @@
+import Link from "next/link";
+
 export default function Home() {
+  const skills = [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Node.js",
+    "Git",
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-black text-white text-center p-10">
-      <h1 className="text-5xl font-bold mb-4">Добро пожаловать в DevJournal 🚀</h1>
-      <p className="text-lg mb-8">
-        Это мой личный проект — место, где я делюсь идеями, заметками и кодом.
-      </p>
-      <a
-        href="https://github.com/dvmnelnur-fullstack/devjournal"
-        target="_blank"
-        className="px-6 py-3 bg-white text-black rounded-xl font-semibold hover:bg-gray-300 transition"
-      >
-        Смотреть на GitHub
-      </a>
-    </main>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="container mx-auto px-6 py-32 text-center">
+        <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+          Добро пожаловать в DevJournal 🚀
+        </h1>
+        <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto">
+          Личный проект разработчика — место, где я делюсь идеями, заметками и кодом.
+        </p>
+        <div className="flex gap-4 justify-center flex-wrap">
+          <Link
+            href="/projects"
+            className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-300 transition"
+          >
+            Мои проекты
+          </Link>
+          <Link
+            href="/about"
+            className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition"
+          >
+            О себе
+          </Link>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="container mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold mb-8 text-center">О проекте</h2>
+        <div className="max-w-3xl mx-auto text-center text-white/80 space-y-4">
+          <p className="text-lg">
+            DevJournal — это мой личный дневник разработчика, где я документирую свой путь в программировании.
+          </p>
+          <p className="text-lg">
+            Здесь вы найдёте мои проекты, заметки о разработке, интересные находки и мысли о технологиях.
+          </p>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="container mx-auto px-6 py-20">
+        <h2 className="text-4xl font-bold mb-12 text-center">Технологии</h2>
+        <div className="flex flex-wrap gap-4 justify-center max-w-3xl mx-auto">
+          {skills.map((skill) => (
+            <div
+              key={skill}
+              className="px-6 py-3 bg-white/10 rounded-full border border-white/20 hover:bg-white/20 transition"
+            >
+              {skill}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="container mx-auto px-6 py-20 text-center">
+        <h2 className="text-4xl font-bold mb-6">Готовы посмотреть мои работы?</h2>
+        <p className="text-white/80 mb-8 text-lg">
+          Изучите мои проекты или почитайте блог о разработке
+        </p>
+        <div className="flex gap-4 justify-center flex-wrap">
+          <Link
+            href="/projects"
+            className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-300 transition"
+          >
+            Посмотреть проекты
+          </Link>
+          <Link
+            href="/blog"
+            className="px-8 py-4 border-2 border-white text-white rounded-xl font-semibold hover:bg-white/10 transition"
+          >
+            Читать блог
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }
